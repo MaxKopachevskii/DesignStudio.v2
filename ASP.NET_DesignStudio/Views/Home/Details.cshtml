@@ -1,0 +1,70 @@
+﻿@model ASP.NET_DesignStudio.Models.Service
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<center><h3 class="header_style">@Model.Name</h3></center>
+<div class="row">
+    <div>
+        <div class="thumbnail background_style">
+            <img src=@Model.Img alt="...">
+            <div class="caption">
+                <h3>@Model.Name</h3>
+                <p>@Model.Description</p>
+                <strong>Цена(за час):</strong>
+                <p>@Model.Price.ToString("c")</p>
+                <strong>Мастер:</strong>
+                <p>@Model.Master.Name</p>
+                <p>
+                    @Html.ActionLink("Информация про мастера", "DetailsOfMaster", new { id = Model.Id }, new { @class = "btn btn-warning btn-xs" }) 
+                    @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-danger btn-xs" })
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*<div>
+    <h4>Детальная информация о сервисе</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MasterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Master.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Информация про мастера", "DetailsOfMaster", new { id = Model.Id }, new { @class = "btn btn-warning btn-xs" }) |
+    @Html.ActionLink("Назад", "Index", null, new { @class = "btn btn-danger btn-xs" })
+</p>*@
